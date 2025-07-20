@@ -151,8 +151,8 @@ def gen_video(gen_image,output):
 
 @app.route("/wits.mp4", methods=["GET","POST"])
 def index():
-  client_ip = request.remote_addr                # UNCOMMENT THIS IF YOU'RE NOT USING CLOUDFLARE
-  #client_ip = request.headers['Cf-Connecting-Ip'] # COMMENT THIS IF YOU'RE NOT USING CLOUDFLARE
+  #client_ip = request.remote_addr                # UNCOMMENT THIS IF YOU'RE NOT USING CLOUDFLARE
+  client_ip = request.headers['Cf-Connecting-Ip'] # COMMENT THIS IF YOU'RE NOT USING CLOUDFLARE
   cached_filename = f"video_{sha256(client_ip.encode('utf-8')).hexdigest()}.mp4"
   cached_path = os.path.join(GENERATED_DIR, cached_filename)
   if os.path.exists(cached_path):
