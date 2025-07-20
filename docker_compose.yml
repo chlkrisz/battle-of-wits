@@ -1,0 +1,12 @@
+# networks:
+    # npm:
+        # external: true
+
+services:
+    battleofwits:
+        build: .
+        container_name: battleofwits
+        expose:
+            - "8000"
+        # networks:
+            # - npm

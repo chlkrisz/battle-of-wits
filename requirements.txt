@@ -1,0 +1,7 @@
+Flask
+gunicorn
+numpy
+requests
+Pillow
+moviepy
+geoip2
